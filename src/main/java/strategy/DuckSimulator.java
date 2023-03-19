@@ -10,7 +10,7 @@ import strategy.fly.FlyWithWings;
 import strategy.quack.MuteQuack;
 import strategy.quack.Quack;
 
-public class Main {
+public class DuckSimulator {
     public static void main(String[] args) {
         Duck wildDuck = new WildDuck();
         wildDuck.setQuackBehavior(new Quack());
