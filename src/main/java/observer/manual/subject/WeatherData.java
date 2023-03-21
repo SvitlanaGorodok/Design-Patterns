@@ -1,6 +1,6 @@
-package observer.subject;
+package observer.manual.subject;
 
-import observer.displays.Observer;
+import observer.manual.displays.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
