@@ -1,6 +1,8 @@
-package factory;
+package factory.nyc;
 
-public class ClamPizza extends Pizza{
+import factory.Pizza;
+
+public class NYCStylePepperoniPizza extends Pizza {
     @Override
     public void prepare() {
 
