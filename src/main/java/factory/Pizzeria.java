@@ -1,6 +1,7 @@
 package factory;
 
 import factory.chicago.ChicagoPizzaStore;
+import factory.nyc.NYCPizzaIngredientFactory;
 import factory.nyc.NYCPizzaStore;
 
 public class Pizzeria {
