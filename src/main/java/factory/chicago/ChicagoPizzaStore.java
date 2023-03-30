@@ -1,20 +1,26 @@
 package factory.chicago;
 
-import factory.Pizza;
-import factory.PizzaStore;
+import factory.*;
 
 public class ChicagoPizzaStore extends PizzaStore {
     @Override
     public Pizza createPizza(String type) {
+        Pizza pizza = null;
+        ChicagoIngredientFactory factory = new ChicagoIngredientFactory();
+
         if(type.equals("cheese")){
-            return new ChicagoStyleCheesePizza();
+            pizza = new PizzaCheese(factory);
+            pizza.setName("Chicago Style Cheese Pizza");
         } else if (type.equals("pepperoni")){
-            return new ChicagoStylePepperoniPizza();
+            pizza = new PizzaPepperoni(factory);
+            pizza.setName("Chicago Style Pepperoni Pizza");
         } else if (type.equals("clam")) {
-            return new ChicagoStyleClamPizza();
+            pizza = new PizzaClam(factory);
+            pizza.setName("Chicago Style Clam Pizza");
         } else if (type.equals("veggie")) {
-            return new ChicagoStyleVeggiePizza();
+            pizza = new PizzaVeggie(factory);
+            pizza.setName("Chicago Style Veggie Pizza");
         }
-        return null;
+        return pizza;
     }
 }

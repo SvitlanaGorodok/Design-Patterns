@@ -5,15 +5,21 @@ import factory.*;
 public class NYCPizzaStore extends PizzaStore {
     @Override
     public Pizza createPizza(String type) {
+        Pizza pizza = null;
+        NYCIngredientFactory factory = new NYCIngredientFactory();
         if(type.equals("cheese")){
-            return new NYCStyleCheesePizza();
+            pizza = new PizzaCheese(factory);
+            pizza.setName("NYC Style Cheese Pizza");
         } else if (type.equals("pepperoni")){
-            return new NYCStylePepperoniPizza();
+            pizza = new PizzaPepperoni(factory);
+            pizza.setName("NYC Style Pepperoni Pizza");
         } else if (type.equals("clam")) {
-            return new NYCStyleClamPizza();
+            pizza = new PizzaClam(factory);
+            pizza.setName("NYC Style Clam Pizza");
         } else if (type.equals("veggie")) {
-            return new NYCStyleVeggiePizza();
+            pizza = new PizzaVeggie(factory);
+            pizza.setName("NYC Style Veggie Pizza");
         }
-        return null;
+        return pizza;
     }
 }
