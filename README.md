@@ -10,3 +10,5 @@ Inversion of Control (IoC) is a design principle that allows transferring the co
 ----------------------------------------------------
 **Abstract Factory** is a creational design pattern, which solves the problem of creating entire product families without specifying their concrete classes.
 ----------------------------------------------------
+**Singleton** is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+----------------------------------------------------
