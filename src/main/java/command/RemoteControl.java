@@ -2,12 +2,11 @@ package command;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class RemoteControl {
     List<Command> onCommands;
     List<Command> offCommands;
+    Command undoCommand;
 
     public RemoteControl() {
         onCommands = new ArrayList<>();
@@ -16,6 +15,7 @@ public class RemoteControl {
             onCommands.add(new NoCommand());
             offCommands.add(new NoCommand());
         }
+        undoCommand = new NoCommand();
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand){
@@ -25,10 +25,16 @@ public class RemoteControl {
 
     public void onButtonWasPushed(int slot){
         onCommands.get(slot).execute();
+        undoCommand = onCommands.get(slot);
     }
 
     public void offButtonWasPushed(int slot){
         offCommands.get(slot).execute();
+        undoCommand = offCommands.get(slot);
+    }
+
+    public void undoButtonWasPushed(){
+        undoCommand.undo();
     }
 
     @Override

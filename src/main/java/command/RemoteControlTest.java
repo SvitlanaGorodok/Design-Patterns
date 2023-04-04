@@ -14,6 +14,10 @@ import command.stereo.Stereo;
 import command.stereo.StereoOffCommand;
 import command.stereo.StereoOnCommand;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class RemoteControlTest {
     public static void main(String[] args) {
         RemoteControl remote = new RemoteControl();
@@ -33,23 +37,29 @@ public class RemoteControlTest {
         StereoOffCommand stereoOff = new StereoOffCommand(stereo);
         CeilingFanOnCommand ceilingFanOn = new CeilingFanOnCommand(ceilingFan);
         CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+        MacroCommand partyOn = new MacroCommand(Arrays.asList(kitchenLightOn, livingRoomLightOn, stereoOn,ceilingFanOn));
+        MacroCommand partyOff = new MacroCommand(Arrays.asList(kitchenLightOff, livingRoomLightOff, stereoOn,ceilingFanOff));
 
         remote.setCommand(0, kitchenLightOn, kitchenLightOff);
         remote.setCommand(1, livingRoomLightOn, livingRoomLightOff);
         remote.setCommand(2, ceilingFanOn, ceilingFanOff);
         remote.setCommand(3, stereoOn, stereoOff);
         remote.setCommand(4, garageDoorUp, garageDoorDown);
+        remote.setCommand(5,partyOn, partyOff);
 
         System.out.println(remote);
 
         remote.onButtonWasPushed(0);
         remote.offButtonWasPushed(0);
+        remote.undoButtonWasPushed();
         remote.onButtonWasPushed(1);
         remote.offButtonWasPushed(1);
         remote.onButtonWasPushed(2);
+        remote.undoButtonWasPushed();
         remote.offButtonWasPushed(2);
         remote.onButtonWasPushed(3);
         remote.offButtonWasPushed(3);
+        remote.undoButtonWasPushed();
         remote.onButtonWasPushed(4);
         remote.offButtonWasPushed(4);
     }
