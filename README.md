@@ -16,3 +16,5 @@ Command is behavioral design pattern that converts requests or simple operations
 ----------------------------------------------------
 The Adapter acts as a wrapper between two objects. It catches calls for one object and transforms them to format and interface recognizable by the second object.
 ----------------------------------------------------
+Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes.
+----------------------------------------------------
