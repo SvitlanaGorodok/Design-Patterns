@@ -10,11 +10,14 @@ public class DuckTestDrive {
         wildTurkey.fly();
 
         System.out.println("\nThe Duck says...");
-        mallardDuck.quack();
-        mallardDuck.fly();
+        testDuck(mallardDuck);
 
         System.out.println("\nThe TurkeyAdapter says...");
-        turkeyAdapter.quack();
-        turkeyAdapter.fly();
+        testDuck(turkeyAdapter);
+    }
+
+    public static void testDuck(Duck duck) {
+        duck.fly();
+        duck.quack();
     }
 }
